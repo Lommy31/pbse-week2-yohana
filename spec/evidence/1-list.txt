@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: *
+Content-type: application/json
+Content-Length: 142
+Date: Tue, 01 Sep 2026 11:34:31 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"items":[{"id":"room_R01","name":"Study Room A","capacity":30,"location":"2nd Floor","availability":"available"}],"nextCursor":"eyJvIjoyMH0"}

@@ -1,0 +1,13 @@
+HTTP/1.1 422 Unprocessable Entity
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: *
+sl-violations: [{"location":["request","header"],"severity":"Error","code":"required","message":"Request header must have required property 'idempotency-key'"}]
+Content-type: application/problem+json
+Content-Length: 115
+Date: Tue, 01 Sep 2026 11:34:31 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"type":"https://api.example.com/problems/validation-failed","title":"One or more fields are invalid","status":422}
