@@ -1,0 +1,1 @@
+My screen-shaped endpoint would be GET /study-room-booking. It should be split into real resources such as rooms and bookings. These are real things in the system that can be identified and managed independently.
