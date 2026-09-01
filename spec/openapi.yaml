@@ -224,45 +224,21 @@ components:
     Problem:
       type: object
       required: [type, title, status]
-      # RFC 9457 permits EXTENSION MEMBERS: your own fields alongside the
-      # five below. They are what turns a merely correct error into an
-      # interface a client can build a good experience on, and they are
-      # explicitly assessed in A1 — so the schema must allow them.
-      # Remove this line and your own extension members become lint
-      # errors, which is exactly how a team ends up with useless errors.
-      additionalProperties: true
       properties:
         type:
           type: string
           format: uri
-          description: |
-            Stable URI identifying the KIND of problem. Client code
-            branches on this exact string, so it must never change
-            once published.
-          example: https://api.example.com/problems/illegal-transition
+          example: https://api.example.com/problems/room-unavailable
         title:
           type: string
-          description: |
-            Short, human-readable, FIXED for a given type. Written for
-            a developer reading a log, not for an end user.
-          example: That status change is not permitted
+          example: Study room is unavailable
         status:
           type: integer
-          description: The HTTP status, repeated so the document stays
-            meaningful when logged away from its response.
           example: 409
         detail:
           type: string
-          description: |
-            Specific to this occurrence. Never a stack trace, an SQL
-            fragment, or an internal hostname.
-          example: thg_51Fa93cD is draft; retirement is refused.
         instance:
           type: string
-          description: |
-            The URI of this specific occurrence. In Chapter 9 the
-            correlation identifier goes here.
-          example: /v1/things/thg_51Fa93cD/retirement
 
   responses:
 
@@ -287,16 +263,11 @@ components:
             status: 404
 
     Conflict:
-      description: |
-        The request was valid but refused by a business rule. This is a
-        domain OUTCOME, not a server error. Do not retry it.
+      description: The request was valid but refused by a business rule.
       content:
         application/problem+json:
-          schema: { $ref: '#/components/schemas/Problem' }
-          example:
-            type: https://api.example.com/problems/illegal-transition
-            title: That status change is not permitted
-            status: 409
+          schema:
+            $ref: '#/components/schemas/Problem'
 
     UnprocessableEntity:
       description: Well-formed but semantically invalid.
