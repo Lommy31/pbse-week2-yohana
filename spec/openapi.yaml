@@ -14,35 +14,14 @@
 openapi: 3.1.0
 
 info:
-  # TODO: your domain.
-  title: Example Domain API
-  # The version of this DOCUMENT. Not the same as the v1 in the URL.
+  title: Library Study Room Booking API
   version: 0.1.0
   description: |
-    TODO: one sentence — what this service is for, and for whom.
+    An API for students to find available study rooms and create and manage study room bookings.
 
-    ## Conventions
-
-    All monetary amounts are integers in the minor unit of the stated
-    currency; the currency is carried explicitly beside every amount.
-    All timestamps are RFC 3339 with an explicit UTC offset, for
-    example 2026-03-04T12:10:04+07:00.
-
-    Clients MUST ignore unknown response fields. Clients MUST treat an
-    unrecognised enumeration value as the nearest non-terminal state
-    and MUST NOT crash on it. These two sentences are what make every
-    additive change to this interface legal.
-
-    ## Idempotency
-
-    TODO: the four sentences from Worksheet W2 — header name and
-    format, which operations require it, the retention window as a
-    number, and the behaviour on reuse with a different body.
-
-    ## State machine
-
-    TODO: the transition table from Worksheet W4. Any pair of statuses
-    not listed there is illegal and returns 409 illegal-transition.
+    All booking durations are expressed in minutes. All timestamps are RFC 3339 with a
+    timezone offset. Clients MUST ignore response fields they do not recognise, and MUST
+    NOT crash when they see a status value they do not know.
 
 servers:
   - url: https://api.example.com/v1
