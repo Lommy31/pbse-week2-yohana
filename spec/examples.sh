@@ -6,9 +6,9 @@
 #  CHANGE THESE THREE LINES FOR YOUR OWN SYSTEM, then edit body.json.
 #  Nothing below this block needs touching.
 # ====================================================================
-LIST_PATH="/things"                     # your collection GET
-LIST_QUERY="status=active&limit=5"      # its filter
-CREATE_PATH="/things"                   # your POST that must not happen twice
+LIST_PATH="/rooms"
+LIST_QUERY="availability=available&limit=5"
+CREATE_PATH="/bookings"
 # ====================================================================
 
 # The request body lives in body.json, not inside this script. Quoting JSON
